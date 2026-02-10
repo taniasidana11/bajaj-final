@@ -5,7 +5,6 @@ const { generateFibonacci, filterPrimes, calculateLCM, calculateHCF, getAIRespon
 const app = express();
 app.use(express.json());
 
-// Official email (replace with actual Chitkara email)
 const OFFICIAL_EMAIL = 'tania1530.be23@chitkarauniversity.edu.in';
 
 // POST /bfhl

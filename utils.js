@@ -60,7 +60,7 @@ function calculateHCF(arr) {
   return arr.reduce((acc, num) => gcd(acc, num));
 }
 
-// AI response using Google Gemini (safe fallback when no API key)
+
 async function getAIResponse(question) {
   if (!genAI) return 'API_KEY_NOT_CONFIGURED';
   try {
@@ -73,7 +73,7 @@ async function getAIResponse(question) {
     if (typeof genAI.getGenerativeModel === 'function') {
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
       if (model && typeof model.generateContent === 'function') {
-        // try to call with a safe signature
+      
         const result = await model.generateContent({ prompt: question });
         if (result && result.output && Array.isArray(result.output) && result.output[0]) {
           const out = result.output[0];
